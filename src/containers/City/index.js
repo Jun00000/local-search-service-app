@@ -1,0 +1,13 @@
+import React from 'react';
+
+class City extends React.Component {
+    render(){
+        return(
+            <div>
+                this is city
+            </div>
+        )
+    }
+}
+
+export default City;
