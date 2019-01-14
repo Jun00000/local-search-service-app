@@ -5,6 +5,8 @@ import App from './containers'
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore'
+import './static/css/common.less'
+import './static/css/font.css'
 
 //创建redux的store对象 
 const store = configureStore();

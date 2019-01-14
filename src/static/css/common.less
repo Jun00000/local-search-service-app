@@ -1,0 +1,31 @@
+// 这里的样式不知道为什么都没生效
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "微软雅黑","Times New Roman",Georgia,Serif;
+    }
+}
+
+input {
+    // border 可应用于几乎所有有形的html元素，而 outline 是针对链接、表单控件和ImageMap等元素设计
+    // outline是元素的外轮廓，和border不同的是，outline不占据空间。
+    outline:none;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clear-fix:after {
+    display: table;
+    content: '';
+    clear: both;
+}
