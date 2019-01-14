@@ -23,12 +23,10 @@ class AppRouter extends React.Component {
         if (cityName == null) { //程序中所有的等于判断都用 ==== ，除了这里这种表达--判断了null和undefined
             cityName = '北京'
         }
-        console.log(cityName)
         // 将城市信息存储到Redux中（因为各个组件都有用到）
         this.props.userInfoActions.update({
             cityName: '北京'
         })
-        console.log(this.props.name)
         this.setState({
             initDone: true,
         })
@@ -68,7 +66,6 @@ class AppRouter extends React.Component {
 //---------------------react redux 绑定 --------------------
 function mapStateToProps(state) {
     return {
-        name:state.cityName
     }
 }
 function mapDispatchToProps(dispatch) {
