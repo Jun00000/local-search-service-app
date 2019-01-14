@@ -40,6 +40,7 @@
     "postcss-preset-env": "6.3.1",
     "postcss-safe-parser": "4.0.1",
     "react": "^16.7.0",
+    "react-addons-pure-render-mixin": "^15.6.2",
     "react-app-polyfill": "^0.2.0",
     "react-chrome-redux": "^2.0.0-alpha.4",
     "react-dev-utils": "^7.0.1",
@@ -62,7 +63,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "mock": "node ./mock/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -120,6 +122,9 @@
     ]
   },
   "devDependencies": {
+    "koa": "^2.6.2",
+    "koa-body": "^4.0.6",
+    "koa-router": "^7.4.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0"
   }
