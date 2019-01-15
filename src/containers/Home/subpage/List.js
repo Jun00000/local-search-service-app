@@ -1,8 +1,8 @@
 import React from 'react';
-import { getAdData } from "../../../fetch/home/home";
-import HomeAd from "../../../components/HomeAd";
+import { getListData } from "../../../fetch/home/home";
+import HomeList from "../../../components/HomeList";
 
-class Ad extends React.Component {
+class List extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -13,15 +13,19 @@ class Ad extends React.Component {
         return (
             <div>
                 {this.state.data.length ?
-                    <HomeAd data={this.state.data} />
+                    <HomeList data={this.state.data} />
                     : <div>{/*加载中*/}</div>
                 }
             </div>
         )
     }
     componentDidMount() {
+        this._loadFirstPageData();
+    }
+    _loadFirstPageData(){
+        const cityName = this.props.cityName;
         // fetch 后端取数据
-        const result = getAdData();
+        const result = getListData(cityName, 0);//获取的是首页数据，所以是0
         // console.log(result)
         result.then((res) => {
             return res.json()
@@ -35,4 +39,4 @@ class Ad extends React.Component {
     }
 }
 
-export default Ad
+export default List
