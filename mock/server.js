@@ -1,37 +1,45 @@
-var app = require('koa')();
-var router = require('koa-router')();
+const Koa = require('koa');
+// 注意require('koa-router')返回的是函数:
+const router = require('koa-router')();
 
-// router.get('/', function *(next) {
-//     this.body = 'hello koa !'
-// });
+const app = new Koa();
 
-// router.get('/api', function *(next) {
-//     this.body = 'test data'
-// });
+//链式写法
+// router.get('/', async (ctx) => {
+//   let html = `
+//       <ul>
+//         <li><a href="/hello">helloworld</a></li>
+//         <li><a href="/about">about</a></li>
+//       </ul>
+//     `
+//   ctx.body = html
+// }).get('/hello', async (ctx) => {
+//   ctx.body = 'helloworld'
+// }).get('/about', async (ctx) => {
+//   ctx.body = 'about'
+// })
 
 // 首页 —— 广告（超值特惠）
 var homeAdData = require('./home/ad.js')
-router.get('/api/homead', function *(next) {
-    this.body = homeAdData
+router.get('/api/homead', async (ctx)=> {
+    ctx.body = homeAdData
 });
 
 // 首页 —— 推荐列表（猜你喜欢）
 var homeListData = require('./home/list.js')
-router.get('/api/homelist/:city/:page', function *(next) {
+router.get('/api/homelist/:city/:page', async (ctx)=> {
     // 参数
-    const params = this.params
+    const params = ctx.params
     const paramsCity = params.city
     const paramsPage = params.page
 
     console.log('当前城市：' + paramsCity)
     console.log('当前页数：' + paramsPage)
 
-    this.body = homeListData
+    ctx.body = homeListData
 });
 
+app.use(router.routes(), router.allowedMethods())
 
+app.listen(3001);
 
-// 开始服务并生成路由
-app.use(router.routes())
-   .use(router.allowedMethods());
-app.listen(3000);

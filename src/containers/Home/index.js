@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import HomeHeader from "../../components/HomeHeader";
 import Category from "../../components/Category";
+import Ad from "./subpage/Ad";
 
 class Home extends React.Component {
     render(){
@@ -9,6 +10,9 @@ class Home extends React.Component {
             <div>
                 <HomeHeader cityName={this.props.userInfo.cityName}/>
                 <Category />
+                {/* 加一个修改用的空行 */}
+                <div style={{height:'15px'}}></div>
+                <Ad />
             </div>
         )
     }
