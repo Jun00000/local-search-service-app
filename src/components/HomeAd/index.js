@@ -8,7 +8,7 @@ class HomeAd extends React.Component {
         return (
             <div id="home-ad1">
                 <h2>超值特惠</h2>
-                <div className="container1 clearfix">
+                <div className="container1 clear-fix">
                     {this.props.data.map((item, index) => (
                         <div key={index} className="item1 float-left">
                             <a href={item.link}>
