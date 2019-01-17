@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Redirect, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Link, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Home from './Home'
 import City from './City'
@@ -65,8 +65,7 @@ class AppRouter extends React.Component {
 
 //---------------------react redux 绑定 --------------------
 function mapStateToProps(state) {
-    return {
-    }
+    return{}
 }
 function mapDispatchToProps(dispatch) {
     return {
@@ -75,10 +74,11 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-const AppCon = connect(
+// 这里要把connect外层包一圈withRouter，否则没有效果
+const AppCon = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(AppRouter);
+)(AppRouter));
 
 
 // Router下面只能有一个子元素
