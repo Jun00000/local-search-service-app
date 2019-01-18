@@ -18,8 +18,9 @@ class LoadMore extends React.Component {
     }
     componentDidMount(){
         let timeoutId;
+        const domEl = this.domEl;
         let _callback = ()=>{
-            const top = this.domEl.getBoundingClientRect().top;
+            const top = domEl.getBoundingClientRect().top;
             const windowHeight = window.screen.height;
             if(top && top < windowHeight){
                 this.props.loadMoreFn();

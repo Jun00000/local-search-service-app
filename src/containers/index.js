@@ -36,8 +36,9 @@ class AppRouter extends React.Component {
             <Switch>
                 <Route exact path='/' component={Home}></Route>
                 <Route path='/city' component={City} />
-                <Route path='/User' component={User} />
-                <Route path='/search/:type(/:keyword)' component={Search} />
+                <Route path='/user' component={User} />
+                {/* 参数后面加问号，代表可选参数 */}
+                <Route path='/search/:category/:keyword?' component={Search} /> 
                 <Route path='/detail/:id' component={Detail} />
                 {/* 这里有一个问题：怎么完全跳转到404页面 */}
                 {/* <Route >
