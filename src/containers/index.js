@@ -6,6 +6,7 @@ import City from './City'
 import User from './User'
 import Search from './Search'
 import Detail from './Detail'
+import Login from './Login'
 import { CITYNAME } from '../config/localStoreKey'
 import * as userInfoActionsFromOtherFile from '../actions/userInfo'
 import { bindActionCreators } from 'redux';
@@ -37,6 +38,7 @@ class AppRouter extends React.Component {
                 <Route exact path='/' component={Home}></Route>
                 <Route path='/city' component={City} />
                 <Route path='/user' component={User} />
+                <Route path='/login/:router?' component={Login} />
                 {/* 参数后面加问号，代表可选参数 */}
                 <Route path='/search/:category/:keyword?' component={Search} /> 
                 <Route path='/detail/:id' component={Detail} />
