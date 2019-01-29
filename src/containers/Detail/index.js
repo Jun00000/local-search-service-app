@@ -8,9 +8,6 @@ class Detail extends React.Component {
     render() {
         // 获取商户ID
         const id = this.props.match.params.id
-        this.state = {
-            isStored: false
-        }
 
         return (
             <div>

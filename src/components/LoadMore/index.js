@@ -3,9 +3,6 @@ import './style.less'
 
 
 class LoadMore extends React.Component {
-    constructor(){
-        super();
-    }
     render() {
         return (
             <div className="load-more" ref={(el)=>this.domEl=el}>

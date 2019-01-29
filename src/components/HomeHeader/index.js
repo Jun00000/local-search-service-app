@@ -8,10 +8,6 @@ import { Link, withRouter } from "react-router-dom";
 //针对这个场景，应该是在containers/Home/subPage下加个HomeHeader组件
 
 class HomeHeader extends React.Component {
-    constructor() {
-        super();
-
-    }
     componentDidMount() {
 
     }

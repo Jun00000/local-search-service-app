@@ -4,9 +4,7 @@ import SearchInput from '../SearchInput'
 import { withRouter } from 'react-router-dom'
 
 class SearchHeader extends React.Component {
-    constructor() {
-        super();
-    }
+    
     handleClick() {
         window.history.back();
     }

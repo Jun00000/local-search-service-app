@@ -51,7 +51,8 @@ class Login extends React.Component {
             // 去用户主页
             this.props.history.push('/user');
         } else {
-            this.props.history.push(router)
+            // 传过来的router被encode，这里应该decode
+            this.props.history.push(decodeURIComponent(router))
         }
     }
 }
