@@ -21,13 +21,13 @@ const app = new Koa();
 
 // 首页 —— 广告（超值特惠）
 var homeAdData = require('./home/ad.js')
-router.get('/api/homead', async (ctx)=> {
+router.get('/api/homead', async (ctx) => {
     ctx.body = homeAdData
 });
 
 // 首页 —— 推荐列表（猜你喜欢）
 var homeListData = require('./home/list.js')
-router.get('/api/homelist/:city/:page', async (ctx)=> {
+router.get('/api/homelist/:city/:page', async (ctx) => {
     // 参数
     const params = ctx.params
     const paramsCity = params.city
@@ -63,6 +63,18 @@ router.get('/api/detail/comment/:page/:id', async (ctx) => {
     console.log('当前页数: ' + page)
 
     ctx.body = detailComment
+})
+
+// 订单列表
+const orderList = require('./orderlist/orderlist.js')
+router.get('/api/orderlist/:username', async (ctx) => {
+    console.log('订单列表')
+
+    const params = ctx.params
+    const username = params.username
+    console.log('用户名：' + username)
+
+    ctx.body = orderList
 })
 
 app.use(router.routes(), router.allowedMethods())

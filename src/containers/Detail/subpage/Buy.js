@@ -74,6 +74,7 @@ class Buy extends React.Component {
                     isStored: true,
                 })
             }
+            return true
         })
     }
     //验证是否登录
