@@ -8,15 +8,14 @@ export default function store(state=[], action) {
             return action.data
         }
         case actionTypes.STORE_ADD: {
-            return state.unshift(action.data);
+             state.unshift(action.data);
+             return state;
         }
         case actionTypes.STORE_RM: {
             // return action.data
             return state.filter((item)=> {
-                if(item !== action.data){
-                    return item;
-                }
-                return true;
+                return item.id !== action.data.id
+                
             })
         }
         default : {

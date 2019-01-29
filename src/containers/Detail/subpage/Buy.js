@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import * as storeActionsFromOtherFile  from "../../../actions/store";
 import { bindActionCreators } from "redux";
-import { timingSafeEqual } from 'crypto';
 
 class Buy extends React.Component {
     constructor(){
@@ -48,18 +47,34 @@ class Buy extends React.Component {
             return false
         }
         // 在redux更新收藏
+        const id = this.props.id;
+        // if stored
+        if(this.state.isStored){
+            this.props.storeActions.rm({id});
+            this.setState({
+                isStored: false
+            })
+        }
+        // if unstored
+        else {
+            this.props.storeActions.add({id});
+            this.setState({
+                isStored: true,
+            })
+        }
     }
     // 判断是否已收藏
     _checkStored(){
         const id = this.props.id;
         const idList = this.props.store;
-        // idList.some((item)=>{
-        //     if(item.id === id){
-        //         this.setState(){
-
-        //         }
-        //     }
-        // })
+        // Array里的some函数
+        idList.some((item)=>{
+            if(item.id === id){
+                this.setState({
+                    isStored: true,
+                })
+            }
+        })
     }
     //验证是否登录
     _doCheck(){
