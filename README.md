@@ -20,7 +20,7 @@ The project is built with react, and now is an incomplete version, since the rea
 ```
 
 ## Architecture
-![Architecture](../public/componentTree.png)
+![Architecture](local-search-service-app/public/componentTree.png)
 
 ## You should know
 * html, css, js
