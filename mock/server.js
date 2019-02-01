@@ -77,6 +77,17 @@ router.get('/api/orderlist/:username', async (ctx) => {
     ctx.body = orderList
 })
 
+// 提交评论
+router.post('/api/submitComment', async (ctx) => {
+    console.log('提交评论')
+
+    // 获取参数
+    ctx.body = {
+        errno: 0,
+        msg: 'ok'
+    }
+})
+
 app.use(router.routes(), router.allowedMethods())
 
 app.listen(3001);
