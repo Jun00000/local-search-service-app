@@ -1,8 +1,9 @@
+let path= 'https://github.com/Jon00000/local-search-service-app/raw/master/public';
 module.exports = {
     hasMore: true,
     data: [
         {
-            img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161022145742279-606202974.jpg',
+            img: path + '/search/138012-20161022145742279-606202974.jpg',
             title: '河束人家',
             subTitle: '南锣鼓巷店',
             price: '150',

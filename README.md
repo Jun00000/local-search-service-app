@@ -20,6 +20,7 @@ The project is built with react, and now is an incomplete version, since the rea
 ```
 
 ## Architecture
+Help you get through the code.
 ![Architecture](https://github.com/Jon00000/local-search-service-app/raw/master/public/componentTree.png)
 
 ## You should know
