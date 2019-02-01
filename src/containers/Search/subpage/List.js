@@ -1,7 +1,8 @@
 import React from 'react';
-import { getListData } from "../../../fetch/home/home";
+import { getSearchData } from '../../../fetch/search/search';
+import { connect } from 'react-redux';
 import HomeList from "../../../components/HomeList";
-import LoadMore from "../../../components/LoadMore"
+import LoadMore from "../../../components/LoadMore";
 
 // 初始化一个组件的 state --注意定义的位置
 const initialState = {
@@ -55,7 +56,7 @@ class SearchList extends React.Component {
         const cityName = '偷懒'; //这里偷懒了，应该用redux取到数据
         const keyword = this.props.keyword || ''
         const category = this.props.category
-        const result = getListData(0, cityName, category, keyword)
+        const result = getSearchData(0, cityName, category, keyword)
         // console.log(result)
         this._handleResult(result);
 
@@ -65,11 +66,11 @@ class SearchList extends React.Component {
         this.setState({
             isLoadingMore: true
         })
-        const cityName = '偷懒'; //这里偷懒了，应该用redux取到数据
+        const cityName = this.props.userInfo.cityName ;
         const page = this.state.page
         const keyword = this.props.keyword || ''
         const category = this.props.category
-        const result = getListData(page, cityName, category, keyword)
+        const result = getSearchData(page, cityName, category, keyword)
         // console.log(result)
         this._handleResult(result);
         this.setState({
@@ -91,5 +92,19 @@ class SearchList extends React.Component {
         })
     }
 }
+// -------------------redux react 绑定--------------------
 
-export default SearchList
+function mapStateToProps(state) {
+    return {
+        userInfo: state.userInfo
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+    }
+}
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(SearchList)
