@@ -1,5 +1,5 @@
 module.exports = {
-    img: 'http://images2015.cnblogs.com/blog/138012/201610/138012-20161016201645858-1342445625.png',
+    img: 'https://github.com/Jon00000/local-search-service-app/raw/master/public/home/138012-20161016201645858-1342445625.png',
     title: '天下第一锅',
     star: 4,
     price: '88',

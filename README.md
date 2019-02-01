@@ -4,6 +4,7 @@ This is a prototype of a local-search service app, which publish crowd-sourced r
 The project is built with react, and now is an incomplete version, since the real back-end sever has not developed yet. Instead, a fake backend was built for test.
 
 #### Screenshot
+Don't forget to set to Simulate Mobile Devices Mode in IE/Chrome.
 ![Screenshot software](http://url/screenshot-software.png "screenshot software")
 
 

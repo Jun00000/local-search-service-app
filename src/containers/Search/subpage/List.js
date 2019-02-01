@@ -53,7 +53,7 @@ class SearchList extends React.Component {
         this._loadFirstPageData()
     }
     _loadFirstPageData() {
-        const cityName = '偷懒'; //这里偷懒了，应该用redux取到数据
+        const cityName = this.props.userInfo.cityName; 
         const keyword = this.props.keyword || ''
         const category = this.props.category
         const result = getSearchData(0, cityName, category, keyword)
